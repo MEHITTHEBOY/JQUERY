@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery mobile site</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .custom_box {
+        text-align: center;
+        border-radius: 20px;
+        background: rgb(248, 193, 193);
+        padding: 25px;
+        margin: 20px;
+        box-shadow: 0 10px 10px grey;
+      }
+      .ui-header,
+      .ui-footer {
+        background: rgb(29, 29, 255);
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home page -->
+    <div data-role="page" id="home">
+      <div data-role="header"><h1>Welcome to WAD lab</h1></div>
+      <div role="main" class="custom_box ui-content">
+        <p>This is optimized jquery mobile site</p>
+        <ul data-role="listview" data-inset="true">
+          <li>
+            <a href="#about">About us</a>
+          </li>
+          <li><a href="#contact">Contact Form</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+        <a
+          href="#popupinfo"
+          data-rel="popup"
+          class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-shadow ui-btn-b"
+          >Show info</a
+        >
+
+        <div
+          id="popupinfo"
+          data-role="popup"
+          class="ui-content"
+          style="max-width: 200px"
+        >
+          This is a popup modal
+        </div>
+      </div>
+      <div data-role="footer">
+        <h1>&copy; 2025 Web Application Development</h1>
+      </div>
+    </div>
+
+    <div data-role="page" id="about">
+      <div data-role="header"><h1>About this app</h1></div>
+      <div role="main" class="ui-content custom_box">
+        This demo illustrates multi-page navigation using jquery
+        <a
+          href="#home"
+          class="ui-btn ui-icon-home ui-corner-all ui-shadow ui-btn-b"
+          >Back to home</a
+        >
+      </div>
+      <div data-role="footer">
+        <h1>Thank you for visiting!!!</h1>
+      </div>
+    </div>
+
+    <div data-role="page" id="contact">
+      <div data-role="header"><h1>Contact Form</h1></div>
+      <div role="main" class="ui-content">
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" name="email" required />
+          <label for="password">Password:</label>
+          <input type="password" name="password" />
+          <input
+            type="submit"
+            value="submit"
+            class="ui-btn ui-btn-a"
+            style="background: blue"
+          />
+        </form>
+        <a href="#home" class="ui-btn ui-btn-b ui-corner-all ui-shadow"
+          >Back to home</a
+        >
+      </div>
+      <div data-role="footer"><h1>Get in touch anytime</h1></div>
+    </div>
+
+    <div data-role="page" id="faq">
+      <div data-role="header"><h1>FAQs</h1></div>
+      <div role="main" class="ui-content">
+        <div data-role="collapsible-set">
+          <div data-role="collapsible">
+            <h4>What is jquery</h4>
+            <p>A framework for building mobile apps</p>
+          </div>
+          <div data-role="collapsible">
+            <h4>Is jquery responsive?</h4>
+            <p>Yes, it adjust the screen according to different sizes</p>
+          </div>
+        </div>
+        <a href="#home" class="ui-btn ui-btn-b ui-corner-all ui-shadow"
+          >Back to home</a
+        >
+      </div>
+      <div data-role="footer">
+        <h1>Still have questions, Email us!!!</h1>
+      </div>
+    </div>
+    <script>
+      $(document).on("submit", "form", (e) => {
+        e.preventDefault;
+        alert("Form submitted successfully!!!");
+      });
+    </script>
+  </body>
+</html>
